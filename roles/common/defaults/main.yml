@@ -30,6 +30,6 @@ vc:
     name: vc++2013.exe
   vc++:
     id: vc++2015
-    url: https://aka.ms/vs/16/release/vc_redist.x64.exe
+    url: http://libs-websoft9-com.oss-cn-qingdao.aliyuncs.com/apps/Windows/vc_redist_2015_2019.x64.exe
     name: vc++2015.exe
 

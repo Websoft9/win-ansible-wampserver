@@ -9,16 +9,6 @@
     path: C:\websoft9\wampserver
     state: directory
 
-## 失败代码 /VERYSILENT无法识别？
-# - name: Install WAMPServer
-#   win_package:
-#     path: C:\temp\wampserver.exe
-#     product_id: wampserver
-#     arguments:
-#     - /VERYSILENT
-#     - /DIR="C:\websoft9\wampserver"
-#     state: present
-
 - name: Install WAMPServer
   win_shell: C:\temp\wampserver.exe /VERYSILENT /DIR="C:\websoft9\wampserver"
 
