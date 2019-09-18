@@ -41,7 +41,7 @@
 
 ## 主控端设置
 在 ansible 已安装的前提下，还需要安装 winrm 模块：
-```pip install 'winrm>=0.3.0'```
+```pip install pywinrm```
 ```apt-get install libkrb5-dev```
 ```pip install kerberos```
 ```pip install paramiko PyYAML Jinja2 httplib2 six```
@@ -56,3 +56,15 @@ hosts 文件示例：
   ansible_ssh_port=5985
   ansible_connection="winrm"
   ansible_winrm_server_cert_validation=ignore
+
+
+## 版本说明：
+Apache：2.4.39   
+MariaDB：10.3.14  
+MySQL：5.726
+PHP：
+5.6.40
+7.0.33
+7.1.29
+7.2.18
+7.3.5
