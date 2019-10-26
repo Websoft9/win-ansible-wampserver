@@ -1,29 +1,29 @@
 # Deployment
 
-**Deployment is to copy the Metabase pre-packaged online to your Cloud Server**. For example, after the user subscribe Metabase on the Cloud Platform, the Platform will automatically copy the Metabase to the corresponding Cloud Server.
+**Deployment is to copy the WampServer pre-packaged online to your Cloud Server**. For example, after the user subscribe WampServer on the Cloud Platform, the Platform will automatically copy the WampServer to the corresponding Cloud Server.
 
-- If Metabase has been deployed, go to [Initial Installation](/zh/stack-installation.md) to complete the operation.
-- If Metabase is not deployed, you need to deploy Metabase to your cloud server first.
+- If WampServer has been deployed, go to [Initial Installation](/zh/stack-installation.md) to complete the operation.
+- If WampServer is not deployed, you need to deploy WampServer to your cloud server first.
 
-We offer two deployment Metabase scenarios (the deployment results are the same):
+We offer two deployment WampServer scenarios (the deployment results are the same):
 
 ## Deploy by Image
 
-**Deploy by Image** means starting instance from Metabase images. **Metabase Image** provide OS and software environment needed for Metabase.
+**Deploy by Image** means starting instance from WampServer images. **WampServer Image** provide OS and software environment needed for WampServer.
 
 For users with experience with cloud servers, Deploy by Image equated with "one-click deployment".
 
-Websoft9 published [Metabase image](https://apps.websoft9.com/metabase) on Cloud Platform, three methods for your deployment:
+Websoft9 published [WampServer image](https://apps.websoft9.com/lamp) on Cloud Platform, three methods for your deployment:
 
-* When **Create New Instance** , select the Metabase image as the system boot template.
-* When **Subscribe Metabase** on Marketplace, the system will promote you to create a new instance for this image at the same time.
-* When **Re-install OS** for you instance, you can replace the existing image with a Metabase image.
+* When **Create New Instance** , select the WampServer image as the system boot template.
+* When **Subscribe WampServer** on Marketplace, the system will promote you to create a new instance for this image at the same time.
+* When **Re-install OS** for you instance, you can replace the existing image with a WampServer image.
 
 ## Deploy by Script
 
 **Deploy by Script** means running a script on your cloud instance to pull the pre-packages online to your instance and configure it at the same time.
 
-Websoft9 provide the [Metabase ansbile automation script](https://github.com/Websoft9/ansible-metabase) on Github. If you are familiar with Ansible, you can deploy the Metabase to the instance automaticly.
+Websoft9 provide the [WampServer ansbile automation script](https://github.com/Websoft9/ansible-lamp) on Github. If you are familiar with Ansible, you can deploy the WampServer to the instance automaticly.
 
 ## Comparison
 

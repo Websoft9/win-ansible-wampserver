@@ -6,10 +6,11 @@ You should know the differences between the terms **Update** and **Upgrade**([Ex
 - Operating system patching is **Update**, Ubuntu16.04 to Ubuntu18.04 is **Upgrade**
 - MySQL5.6.25 to MySQL5.6.30 is **Update**, MySQL5.6 to MySQL5.7 is **Upgrade**
 
-For Metabase maintenance, focus on the following two Update & Upgrade jobs
+For WampServer maintenance, focus on the following two Update & Upgrade jobs
 
 - Sytem update(Operating System and Running Environment) 
-- Metabase upgrade 
+- PHP Version Upgrade
+- Application Upgrade
 
 ## System Update
 
@@ -24,19 +25,24 @@ yum update -y
 ```
 > This deployment package is preconfigured with a scheduled task for automatic updates. If you want to remove the automatic update, please delete the corresponding Cron
 
-## Metabase Upgrade
+## PHP Version Upgrade
 
-Follow the steps below to complete the upgrade:
+Refert to the docs *[PHP version upgrade](https://support.websoft9.com/docs/linux/zh/lang-php.html#verion-upgrade)*
 
-1. Log in Metabase, go to Admin->Setting->Updates, the system will give you a reminder if there is a new upgrade package
-![Metabase updates reminder](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-updatereminder-websoft9.png)
+## Application Upgrade
 
-2. Click the **Upgrade** button, go to the [Metabase Install](https://metabase.com/start/) page
+Different application have different upgrade solution, not discussed here
 
-3. The deployment package we provide is in the jar package installation mode, so on the installation page we select the **Custom install** mode.
-![Metabase install](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-updatedl-websoft9.png)
+## Q&A
 
-3. Download teh Metabase.jar pakage and upload to your instance's directory `/data/wwwroot/metabase`
-![Metabase upload](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-updatereplace-websoft9.png)
+#### Is this Image support MySQL5.6 upgrade to MySQL5.7?
+No,you can upgrade the same version, E.g 5.6.x to 5.6.y   or  5.7.x to 5.7.y
 
-4. Overwrite existing files and reload the Metabase
+#### Is this Image support PHP7.0 upgrade to PHP7.2?
+Yes
+
+#### Is this Image support PHP7.2 downgrade PHP7.0?
+No
+
+#### What should I do before upgrade?
+You should backup all your data

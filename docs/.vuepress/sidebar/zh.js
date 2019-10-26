@@ -16,10 +16,13 @@ module.exports = [
     title: '实践指南',
     collapsable: false,
     children: [
+      '/zh/solution-deployment',
+      '/zh/solution-directory',
       '/zh/solution-smtp',
       '/zh/solution-https',
       '/zh/solution-backup',
       '/zh/solution-upgrade',
+      ['https://support.websoft9.com/docs/lamp/installation/zh','开源应用安装示例（集）'],
       '/zh/solution-more',
     ]
   },
@@ -30,7 +33,8 @@ module.exports = [
     children: [
       '/zh/admin-services',
       '/zh/admin-mysql',
-      ['https://support.websoft9.com/docs/linux/zh/webs-nginx.html','Nginx'],
+      ['https://support.websoft9.com/docs/linux/zh/lang-php.html','PHP'],
+      ['https://support.websoft9.com/docs/linux/zh/webs-apache.html','Apache'],
       ['https://support.websoft9.com/docs/linux/zh/admin-practices.html','Linux'],
     ]
   },

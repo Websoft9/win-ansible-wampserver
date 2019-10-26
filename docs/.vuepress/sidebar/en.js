@@ -15,10 +15,13 @@ module.exports = [
         title: 'Best Practices',
         collapsable: false,
         children: [
+          '/solution-deployment',
+          '/solution-directory',
           '/solution-smtp',
           '/solution-https',
           '/solution-backup',
           '/solution-upgrade',
+          ['https://support.websoft9.com/docs/lamp/installation/','Applications Deployment Example'],
           '/solution-more',
         ]
       },
@@ -29,7 +32,8 @@ module.exports = [
         children: [
           '/admin-services',
           '/admin-mysql',
-          ['https://support.websoft9.com/docs/linux/webs-nginx.html','Nginx'],
+          ['https://support.websoft9.com/docs/linux/lang-php.html','PHP'],
+          ['https://support.websoft9.com/docs/linux/webs-apache.html','Apache'],
           ['https://support.websoft9.com/docs/linux/admin-practices.html','Linux'],
         ]
       },

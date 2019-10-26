@@ -1,14 +1,25 @@
 # FAQ
 
-#### Metabase支持多语言吗？
+#### 默认字符集是什么？
+UTF-8
 
-支持多语言（包含中文），系统默认根据浏览器自动选择语言 
+#### Apache工作模式有event,prefork,worker等，WampServer 默认是哪个？
+prefork
 
-#### Metabase数据库连接配置信息在哪里？
+#### Apache 虚拟主机配置文件是什么？
 
-数据库配置信息在Metabase安装目录下的 *metabase.conf* 中，[查阅安装目录路径](/zh/stack-components.md#metabase)
+虚拟主机配置文件是 Apache 用于管理多个网站的**配置段集合**，路径为：*/etc/httpd/conf.d/vhost.conf*。  
+每个配置段的形式为： `<VirtualHost *:80> ...</VirtualHost>`，有多少个网站就有多少个配置段
 
-#### 如果没有域名是否可以部署 Metabase？
+#### 如何修改示例网站根目录？
+
+示例网站路径信息 */data/wwwroot/www.example.com* 存放在 [Apache 虚拟主机配置文件](/zh/stack-components.md#apache)中
+
+#### WampServer 环境是否支持部署多个网站？
+
+支持。每增加一个网站，只需在[Apache 虚拟主机配置文件](/zh/stack-components.md#apache)中增加对应的  VirtualHost 即可。
+
+#### 如果没有域名是否可以部署 WampServer？
 
 可以，访问`http://服务器公网IP` 即可
 
@@ -18,23 +29,71 @@
 
 #### 是否有可视化的数据库管理工具？
 
-有，内置phpMyAdmin，访问地址：http://服务器公网IP:9090
+有，内置phpMyAdmin，访问地址：*http://服务器公网IP/phpmyadmin*
 
-#### 如何禁止phpMyAdmin访问？
+#### 如何禁止外界访问phpMyAdmin？
 
-关闭服务器安全组的9090端口即可禁止
+连接服务器，编辑 [phpMyAdmin 配置文件](/zh/stack-components.md#phpmyadmin)，将其中的 `Require all granted` 更改为 `Require ip 192.160.1.0`，然后重启 Apache 服务
 
-#### 是否可以修改Metabase的源码路径？
+#### 网站源码路径如何修改？
 
-可以，通过修改 [Nginx 虚拟主机配置文件](/zh/stack-components.md)中相关参数
+通过修改 [Apache 虚拟主机配置文件](/zh/stack-components.md#apache) 中相关路径参数
+
+#### 如何删除9Panel?
+
+删除 */data/apps/9panel* 下的所有数据即可，但需要保留文件夹
+
+#### 通过 SFTP 上传网站源码后是否需要修改拥有者权限？
+
+不需要，WampServer 会自动修正
+
+#### 如何重置 php.ini 文件？
+
+我们在 Github 上报错了一份完整的 php.ini 文件模板，[下载](https://github.com/Websoft9/ansible-lamp/blob/master/roles/php/templates/php.ini) 后覆盖你服务器上的 */ect/php.ini*
+
+#### 如何取消 Apache Test 页面？
+
+使用 # 号将: */etc/httpd/conf.d/welcome.conf* 中的所有内容全部注释掉，然后重启 Apache 服务
 
 #### 如何修改上传的文件权限?
 
 ```shell
-chown -R nginx.nginx /data/wwwroot/metabase
-find /data/wwwroot/metabase -type d -exec chmod 750 {} \;
-find /data/wwwroot/metabase -type f -exec chmod 640 {} \;
+# 拥有者
+chown -R apache.apache /data/wwwroot/
+# 读写执行权限
+find /data/wwwroot/ -type d -exec chmod 750 {} \;
+find /data/wwwroot/ -type f -exec chmod 640 {} \;
 ```
+
+#### 如果设置 HTTP 跳转到 HTTPS？
+
+建议在网站根目录下的.htacesss文件中增加redirect规则，参考如下：
+```
+RewriteEngine on
+RewriteBase /
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
+```
+#### WampServer 默认安装了哪些 Apache模块？ 
+
+运行命令 `apachectl -M` 查看
+
+#### WampServer 默认安装了哪些 PHP 模块？
+
+运行命令 `php -m` 查看
+
+#### 如何启用或禁用 Apache 模块？
+
+以伪静态模块为例。打开 [Apache模块配置文件](/zh/stack-components.md#apache)，找到 *LoadModule rewrite_module modules/mod_rewrite.so*，通过“#”作为注释来开启或禁用此模块
+
+#### 如何禁用IP访问网站，防止恶意解析？
+
+参考 [Apache 相关配置文档](https://support.websoft9.com/docs/linux/zh/webs-apache.html#禁用ip访问-防止恶意解析)
+
+#### 没有域名是否可以通过 http://公网IP/mysite1 这样的方式访问网站？
+
+可以。具体配置方法参考 [安装网站](/zh/solution-deployment.md#安装第二个网站)
+
 #### 部署和安装有什么区别？
 
 部署是将一序列软件按照不同顺序，先后安装并配置到服务器的过程，是一个复杂的系统工程。  

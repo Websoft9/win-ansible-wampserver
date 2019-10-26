@@ -6,34 +6,36 @@
 - 操作系统打个补丁常称之为**更新**，Ubuntu16.04 变更为 Ubuntu18.04，称之为**升级**
 - MySQL5.6.25-->MySQL5.6.30 常称之为**更新**，MySQL5.6->MySQL5.7 称之为**升级**
 
-Metabase 完整的更新升级包括：系统级更新（操作系统和运行环境）和 Metabase 程序升级两种类型
+WampServer 完整的更新升级包括：系统级更新（操作系统和运行环境）和 WampServer 程序升级两种类型
 
 ## 系统级更新
 
 运行一条更新命令，即可完成系统级更新：
 
 ``` shell
-#For Ubuntu
-apt update && apt upgrade -y
-
 #For Centos&Redhat
 yum update -y
+
+#For Ubuntu&Debian
+apt update && apt upgrade -y
 ```
 > 本部署包已预配置一个用于自动更新的计划任务。如果希望去掉自动更新，请删除对应的Cron
 
 
-## Metabase升级
+## 网站升级
 
-Metabase有升级包的时候，后台会及时给出提示。参考下面的步骤完成升级：
+具体网站具体方案，此处不探讨
 
-1. Metabase后台->设置->升级，如果有新的升级包，系统会给与提示
-![Metabase升级提示](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-updatereminder-websoft9.png)
+## 常见问题
 
-2. 点击“更新”按钮后，系统会跳转到Metabase官方的安装页面。
-3. 我们提供的部署包采用的是jar包安装模式，因此在安装页面我们选择“Custom install”模式，
-![Metabase升级提示](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-updatedl-websoft9.png)
+#### 是否支持 MySQL 大版本升级，例如：MySQL5.6-> MySQL5.7？
+不支持，仅支持小版本升级。例如：5.6.x to 5.6.y 或 5.7.x to 5.7.y
 
-3. 下载Metabase.jar包后，上传到服务器 `/data/wwwroot/metabase`, 覆盖已有的同名文件
-![Metabase升级提示](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-updatereplace-websoft9.png)
+#### 是否支持 PHP 大版本升级，例如：PHP7.0-> PHP7.2？
+支持
 
-4. 重新加载Metabase，升级成功
+#### 是否支持 PHP 大版本降级，例如：PHP7.2-> PHP7.0？
+不支持
+
+#### 升级之前需要做什么准备工作？
+做好快照备份

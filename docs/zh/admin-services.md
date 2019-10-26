@@ -1,23 +1,29 @@
 # 服务启停
 
-使用由Websoft9提供的Metabase部署方案，可能需要用到的服务如下：
+使用由Websoft9提供的WampServer部署方案，可能需要用到的服务如下：
 
-### Metabase
+### Apache
 
 ```shell
-sudo systemctl start metabase
-sudo systemctl stop metabase
-sudo systemctl restart metabase
-sudo systemctl status metabase
+#For Centos&Redhat
+sudo systemctl start httpd
+sudo systemctl stop httpd
+sudo systemctl restart httpd
+sudo systemctl status httpd
+
+#For Ubuntu&Debian
+sudo systemctl start apache2
+sudo systemctl stop apache2
+sudo systemctl restart apache2
+sudo systemctl status apache2
 ```
 
-### Nginx
-
+### PHP-FPM
 ```shell
-sudo systemctl start nginx
-sudo systemctl stop nginx
-sudo systemctl restart nginx
-sudo systemctl status nginx
+systemctl start php-fpm
+systemctl stop php-fpm
+systemctl restart php-fpm
+systemctl status php-fpm
 ```
 
 ### MySQL
@@ -29,3 +35,11 @@ sudo systemctl restart mysql
 sudo systemctl status mysql
 ```
 
+### Redis
+
+```shell
+systemctl start redis
+systemctl stop redis
+systemctl restart redis
+systemctl status redis
+```
