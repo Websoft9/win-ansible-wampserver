@@ -2,44 +2,19 @@
 
 使用由Websoft9提供的WampServer部署方案，可能需要用到的服务如下：
 
-### Apache
+> 服务随操作系统自动启动，如果手工修改配置参数后，需要重新启停服务
 
-```shell
-#For Centos&Redhat
-sudo systemctl start httpd
-sudo systemctl stop httpd
-sudo systemctl restart httpd
-sudo systemctl status httpd
+## 通过 WampServer 管理服务
 
-#For Ubuntu&Debian
-sudo systemctl start apache2
-sudo systemctl stop apache2
-sudo systemctl restart apache2
-sudo systemctl status apache2
-```
+远程桌面到服务器，点击 WAMPServer 图标，然后点击【重新启动所有服务】，就可以同时重启 Apache, MySQL & MariaDB 服务
 
-### PHP-FPM
-```shell
-systemctl start php-fpm
-systemctl stop php-fpm
-systemctl restart php-fpm
-systemctl status php-fpm
-```
+![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-clicks-websoft9.png)
 
-### MySQL
+## 通过 Windows 系统服务 管理服务
 
-```shell
-sudo systemctl start mysql
-sudo systemctl stop mysql
-sudo systemctl restart mysql
-sudo systemctl status mysql
-```
+远程桌面到服务器，打开 Windows 系统的服务管理工具：【开始菜单】>【管理工具】>【服务】
+![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-ss-websoft9.png)
 
-### Redis
-
-```shell
-systemctl start redis
-systemctl stop redis
-systemctl restart redis
-systemctl status redis
-```
+- wampapache64 代表的是 Apache 服务
+- wampMysql，代表的是 MySQL 服务
+- wampMariadb，代表的是 MariaDB 服务

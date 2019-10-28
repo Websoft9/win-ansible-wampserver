@@ -9,7 +9,7 @@ Drupal（drupal.org）是全球三大开源内容管理系统之一，约3%的�
 在开始 Drupal 的安装部署之前，建议完成如下事情：
 
 * 浏览器访问：*http://公网ip/9panel* ，快速了解镜像的使用
-* 查看镜像环境参数，包括：**目录路径、版本、数据库、虚拟主机配置文件等** （[马上查看](https://support.websoft9.com/docs/lamp/zh/stack-components.html)）
+* 查看镜像环境参数，包括：**目录路径、版本、数据库、虚拟主机配置文件等** （[马上查看](https://support.websoft9.com/docs/wampserver/zh/stack-components.html)）
 
 ## Drupal 安装到服务器
 
@@ -18,9 +18,9 @@ Drupal（drupal.org）是全球三大开源内容管理系统之一，约3%的�
 如果你使用的是 WampServer 镜像，请先将 Drupal 安装到服务器，操作步骤如下：
 
 1. 通过域名控制台完成解析域名（增加一个A记录指向服务器IP），并测试是否成功
-2. 通过 [phpMyAdmin 登录 MySQL](https://support.websoft9.com/docs/lamp/zh/admin-mysql.html)，为 Drupal 系统增加一个数据库，假如名称为：`drupal`
+2. 通过 [phpMyAdmin 登录 MySQL](https://support.websoft9.com/docs/wampserver/zh/admin-mysql.html)，为 Drupal 系统增加一个数据库，假如名称为：`drupal`
 3. 到 Drupal 官方[下载源码](https://www.drupal.org/download)
-4. 参考[《如何在 WampServer 上增加网站》](https://support.websoft9.com/docs/lamp/zh/solution-deployment.html#安装第二个网站) ，将 Drupal 安装到服务器的 [WampServer](https://support.websoft9.com/docs/lamp/zh/) 环境中
+4. 参考[《如何在 WampServer 上增加网站》](https://support.websoft9.com/docs/wampserver/zh/solution-deployment.html#安装第二个网站) ，将 Drupal 安装到服务器的 [WampServer](https://support.websoft9.com/docs/wampserver/zh/) 环境中
 
 ---
 

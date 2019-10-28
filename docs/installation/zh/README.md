@@ -6,11 +6,11 @@ home: false
 
 经过实践，WampServer镜像兼容数百个应用或网站软件的运行。
 
-本文档由 Websoft9 提供，汇总了数十个基于 [WampServer 运行环境](http://support.websoft9.com/docs/lamp/zh) 的主流开源PHP网站应用安装教程
+本文档由 Websoft9 提供，汇总了数十个基于 [WampServer 运行环境](http://support.websoft9.com/docs/wampserver/zh) 的主流开源PHP网站应用安装教程
 
 ## WampServer 是什么
 
-WampServer（Linux-Apache-MySQL-PHP）是流行的Web运行环境组合，基于免费、开源软件构建。包括：Linux系统，Apache Web服务器软件，MySQL数据库，PHP语言等四种核心组件以及其他相关辅助组件。Websoft9通过组合、优化和兼容性处理，将所有组件打包成一个高性能、易维护的PHP运行环境解决方案包，保证能够兼容运行绝大部分PHP应用程序。
+WampServer 是一个 Windows 环境下的 Apache+PHP+MySQL/MariaDB 组合，由法国人维护的开源项目，拥有简单的图形和菜单安装和配置环境，支持 PHP 多版本切换。支持22种语言，其中包括简体中文和繁体中文。
 
 一个网站应用，是如何在 WampServer 下环境下运行的呢？ 请参考下图的层次结构图
 

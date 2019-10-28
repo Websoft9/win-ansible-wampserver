@@ -9,7 +9,7 @@ Joomla（joomla.org）是全球三大开源内容管理系统之一（CMS），�
 在开始 Joomla 的安装部署之前，建议完成如下事情：
 
 * 浏览器访问：*http://公网ip/9panel* ，快速了解镜像的使用
-* 查看镜像环境参数，包括：**目录路径、版本、数据库、虚拟主机配置文件等** （[马上查看](https://support.websoft9.com/docs/lamp/zh/stack-components.html)）
+* 查看镜像环境参数，包括：**目录路径、版本、数据库、虚拟主机配置文件等** （[马上查看](https://support.websoft9.com/docs/wampserver/zh/stack-components.html)）
 
 ## Joomla 安装到服务器
 
@@ -18,9 +18,9 @@ Joomla（joomla.org）是全球三大开源内容管理系统之一（CMS），�
 如果你使用的是 WampServer 镜像，请先将 Joomla 安装到服务器，操作步骤如下：
 
 1. 通过域名控制台完成解析域名（增加一个A记录指向服务器IP），并测试是否成功
-2. 通过 [phpMyAdmin 登录 MySQL](https://support.websoft9.com/docs/lamp/zh/admin-mysql.html)，为 Joomla 系统增加一个数据库，假如名称为：`joomla`
+2. 通过 [phpMyAdmin 登录 MySQL](https://support.websoft9.com/docs/wampserver/zh/admin-mysql.html)，为 Joomla 系统增加一个数据库，假如名称为：`joomla`
 3. 到 Joomla 官方[下载源码](https://downloads.joomla.org/)
-4. 参考[《如何在 WampServer 上增加网站》](https://support.websoft9.com/docs/lamp/zh/solution-deployment.html#安装第二个网站) ，将 Joomla 安装到服务器的 [WampServer](https://support.websoft9.com/docs/lamp/zh/) 环境中
+4. 参考[《如何在 WampServer 上增加网站》](https://support.websoft9.com/docs/wampserver/zh/solution-deployment.html#安装第二个网站) ，将 Joomla 安装到服务器的 [WampServer](https://support.websoft9.com/docs/wampserver/zh/) 环境中
 
 ---
 
@@ -29,7 +29,7 @@ Joomla（joomla.org）是全球三大开源内容管理系统之一（CMS），�
 1. 本地浏览器访问：*http://域名* 或 *http://公网IP* 进入安装向导（首选域名访问方式）
 2. 选择一门语言，并设置后台管理账号信息，牢记之
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/joomla/jm01.png)
-3. 填写您的数据库参数（[查看数据库账号密码](https://support.websoft9.com/docs/lamp/zh/stack-accounts.html)），点击 “Next”;
+3. 填写您的数据库参数（[查看数据库账号密码](https://support.websoft9.com/docs/wampserver/zh/stack-accounts.html)），点击 “Next”;
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/joomla/jm02.png)
 4. 进入是否需要安装演示数据环节，选择您需要的演示数据示例或不选择，点击“Install”
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/joomla/jm03.png)

@@ -21,7 +21,7 @@ module.exports = [
           '/solution-https',
           '/solution-backup',
           '/solution-upgrade',
-          ['https://support.websoft9.com/docs/lamp/installation/','Applications Deployment Example'],
+          ['https://support.websoft9.com/docs/wampserver/installation/','Applications Deployment Example'],
           '/solution-more',
         ]
       },
@@ -32,9 +32,9 @@ module.exports = [
         children: [
           '/admin-services',
           '/admin-mysql',
-          ['https://support.websoft9.com/docs/linux/lang-php.html','PHP'],
-          ['https://support.websoft9.com/docs/linux/webs-apache.html','Apache'],
-          ['https://support.websoft9.com/docs/linux/admin-practices.html','Linux'],
+          ['https://support.websoft9.com/docs/windows/lang-php.html','PHP'],
+          ['https://support.websoft9.com/docs/windows/webs-apache.html','Apache'],
+          ['https://support.websoft9.com/docs/windows/admin-practices.html','Windows'],
         ]
       },
       

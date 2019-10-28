@@ -2,16 +2,16 @@
 
 在 WampServer 环境上安装一个网站，也就是我们常说的增加一个虚拟主机。
 
-宏观上看，只需两个步骤：**上传网站代码** + [**虚拟机主机配置文件**](/zh/stack-components.md#apache) **中增加 VirtualHost 配置段**
+宏观上看，只需两个步骤：**上传网站代码** + [**虚拟机主机配置文件（httpd-vhosts.conf）**](/zh/stack-components.md#apache) **中增加 VirtualHost 配置段**
 
-> VirtualHost 又称之为虚拟主机配置段，每个网站必定在 vhost.conf 中对应唯一的 VirtualHost。
+> VirtualHost 又称之为虚拟主机配置段，每个网站必定在 httpd-vhosts.conf 中对应唯一的 VirtualHost。
 
 ## 准备
 
 安装网站之前，请了解如下几个要点，做好准备工作
 
-*  虚拟机主机配置文件：*/etc/httpd/vhost/vhost.conf* 
-*  连接工具：使用 WinSCP 连接服务器，它包含文件管理、运行命令两方面功能
+*  虚拟机主机配置文件：*C:\websoft9\wampserver\bin\apache\apache2.4.x\conf\extra\httpd-vhosts.conf* 
+*  连接工具：使用 Windows自带的远程桌面工具 连接服务器
 *  域名：若需要使用域名，请确保备案后的域名成功解析到服务器IP
 *  数据库：网站安装向导过程中可能需要使用数据库，请使用 [phpMyAdmin 管理数据库](/zh/admin-mysql.md)
 
@@ -21,47 +21,46 @@
 
 下面通过**替换示例网站**（WampServer 默认存在一个示例网站）的方式来教你安装你的第一个网站：
 
-1. 使用 WinSCP 连接服务器
-2. 删除示例网站 */data/wwwroot/www.example.com* 下的所有文件（保留目录）
+1. 使用 远程桌面工具 连接服务器
+
+2. 删除示例网站 *C:\websoft9\wampserver\www\www.example.com* 下的所有文件（保留目录）
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-exadr-websoft9.png)
+
 3. 将本地电脑上的网站源码上传到示例目录下
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/winscp/winscp-uploadcodestoexample-websoft9.png)
-4. 修改 *vhost.conf* 中已有 VirtualHost 配置段（[修改参考](/zh/solution-deployment.md#virtualhost)），实现绑定域名、修改网站目录名称等操作。
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/lamp/lamp-editvhostconf-websoft9.png)
+
+4. 修改 *httpd-vhosts.conf* 中已有 VirtualHost 配置段（[修改参考](/zh/solution-deployment.md#virtualhost)），实现绑定域名、修改网站目录名称等操作。
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-mddfvhost-websoft9.png)
    ::: warning
    如果不绑定域名、不修改网站目录名称，请跳过步骤4和5
    :::
-5. 保存vhost.conf，然后在 WinSCP 中运行重启服务命令 或 云控制台重启服务器 ：
-      ~~~
-      # 重启Apache服务命令
-      systemctl restart httpd
-      ~~~
+5. 保存 httpd-vhosts.conf，然后 [重启所有服务](/zh/admin-services.md)
+
 6. 本地浏览器访问：*http://域名* 或 *http://服务器公网IP* 即可访问您的网站
 
 ## 安装第二个网站
 
-从安装第二个网站开始，需要在*vhost.conf* 中增加对应的虚拟主机配置段，具体如下
+从安装第二个网站开始，需要在*httpd-vhosts.conf* 中增加对应的虚拟主机配置段，具体如下
 
-1. 使用 WinSCP 连接服务器，在 /data/wwwroot 下新建一个网站目录，假设命令为“mysite2”
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/lamp/lamp-createmysite2-websoft9.png)
-2. 将本地网站源文件上传到：*/data/wwwroot/mysite2* 
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/lamp/lamp-uploadcodes-websoft9.png)
-3. 编辑 vhost.conf 文件
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/lamp/lamp-editvhostconf-websoft9.png)
+1. 使用 远程桌面 连接服务器，在 C:\websoft9\wampserver\www 下新建一个网站目录，假设命令为“mysite2”
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-addmysite2-websoft9.png)
+2. 将本地网站源文件上传到：*C:\websoft9\wampserver\www\mysite2* 
+3. 编辑 httpd-vhosts.conf 文件
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-addmorevhostconfig-websoft9.png)
 
     根据是否通过域名访问，选择下面操作之一：
 
      * **有域名，通过 http://域名 访问网站**
      
-     请将下面 VirtualHost 模板拷贝到 vhost.conf 中，并修改其中的ServerName, DocumentRoot, ErrorLog, CusomLog, Directory等项的值
+     请将下面 VirtualHost 模板拷贝到 httpd-vhosts.conf 中，并修改其中的ServerName, DocumentRoot, ErrorLog, CusomLog, Directory等项的值
 
        ```
        <VirtualHost *:80>
        ServerName www.mydomain.com
        # ServerAlias other.mydomain.com
-       DocumentRoot "/data/wwwroot/mysite2"
-       ErrorLog "/var/log/httpd/www.mydomain.com_error_apache.log"
-       CustomLog "/var/log/httpd/www.mydomain.com_apache.log" common
-       <Directory "/data/wwwroot/mysite2">
+       DocumentRoot "C:\websoft9\wampserver\www\mysite2"
+       ErrorLog "logs\mydomain.com_error_apache.log"
+       CustomLog "logs\mydomain.com_error_apache.log" common
+       <Directory "C:\websoft9\wampserver\www\mysite2">
        Options Indexes FollowSymlinks
        AllowOverride All
        Require all granted
@@ -71,22 +70,18 @@
 
      * **没有域名，通过 http://IP/mysite2 访问网站**  
     
-     请将下面 Alias 模板拷贝到 vhost.conf 中，并修改其中的 /path, Directory等项的值
+     请将下面 Alias 模板拷贝到 httpd-vhosts.conf 中，并修改其中的 /path, Directory等项的值
 
       ```
-      Alias /sitename /data/wwwroot/mysite2
-      <Directory "/data/wwwroot/mysite2">
+      Alias /sitename C:\websoft9\wampserver\www\mysite2
+      <Directory "C:\websoft9\wampserver\www\mysite2">
 	  Options Indexes FollowSymlinks
 	  AllowOverride All
 	  Require all granted
 	  </Directory>
       ```
-4. 保存vhost.conf，然后在 WinSCP 中运行重启服务命令 或 云控制台重启服务器 ：
-      ~~~
-      # 重启Apache服务命令
-      systemctl restart httpd
-      ~~~
-5. 根据有无域名，本地浏览器访问：http://域名 或 http://IP/sitename  访问你的网站。
+4. 保存 httpd-vhosts.conf，然后 [重启所有服务](/zh/admin-services.md)
+5. 根据有无域名，本地浏览器访问：*http://域名* 或 *http://服务器公网IP/sitename*  访问你的网站。
 
 
 ## 安装第 N 个网站
@@ -116,14 +111,12 @@ VirtualHost 改动务必准确无误，任何错误的修改都会导致服务�
 
 ## 常见问题
 
-#### 访问刚安装的网站，页面显示 “没有权限...” ？
+##### 找不到示例网站？
 
-运行一条修改文件权限的命令
-~~~
-chown -R apache.apache /data/wwwroot
-~~~
+历史版本中历史网站路径与文档中描述有差异  
+历史版本的示例网站路径为：C:\websoft9\wampstack\www
 
-#### 修改 vhost.conf 文件之后，Apache 服务无法启动？
+#### 修改 httpd-vhosts.conf 文件之后，Apache 服务无法启动？
 
 一般是 VirtualHost 中虚拟主机的目录位置不正确导致
 
@@ -138,3 +131,7 @@ chown -R apache.apache /data/wwwroot
 #### 新增的网站，显示 500 Internal Server Error？
 
 程序代码错误，需要查看程序的日志文件
+
+#### 总是显示9Panel？
+
+请删除示例中的index文件，并清空浏览器缓存

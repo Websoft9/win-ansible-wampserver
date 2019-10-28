@@ -6,17 +6,19 @@ The WampServer deployment package contains a sequence software (referred to as "
 
 ### Directories for Application
 
-Suggested directory: */data/wwwroot*  
-Example application directory: */data/wwwroot/www.example.com*  
+Suggested directory: *C:\websoft9\wampserver\www*  
+Example application directory: *C:\websoft9\wampserver\www\www.example.com*  
 
 > The URL: *http://Internet IP* will access the example application
 
 ### Apache
 
-Apache vhost configuration file: */etc/httpd/conf.d/vhost.conf*    
-Apache main configuration file: */etc/httpd/conf/httpd.conf*   
-Apache logs file: */var/log/httpd*  
-Apache module configuration file: */etc/httpd/conf.modules.d/00-base.conf*    
+**Apache vhost configuration file**: *C:\websoft9\wampserver\bin\apache\apache2.4.x\conf\extra\httpd-vhosts.conf*    
+![](http://libs.websoft9.com/Websoft9/DocsPicture/en/wampserver/wampserver-vhost-websoft9.png)
+
+Apache main configuration file: * C:\websoft9\wampserver\bin\apache\apache2.4.x\conf\httpd.conf*   
+Apache logs file: *C:\websoft9\wampserver\logs*  
+Apache module directory: *C:\websoft9\wampserver\bin\apache\apache2.4.x\modules*    
 
 **vhost.conf** includes one [VirtualHost](https://support.websoft9.com/docs/linux/webs-apache.html#vhost) configuration items whitch matched the **Example application**
 ```

@@ -14,6 +14,13 @@ If you have completed the WampServer deployment on Cloud Platform, the following
    ![9panel](https://libs.websoft9.com/Websoft9/DocsPicture/en/9panel/9panelmain-websoft9.png)
 
 2. You can get the basics of image, manage the database, access docs, and helpdesk from 9Panel
+
+## Remote to Desktop of Server
+
+Connect Windows server on the remote desktop, check if WampServer is running normally (the icon is green), and click 【Restart all services】 to test the availability. If there is no WampServer icon in the lower right corner of the desktop, please restart the server before viewing.
+
+![](http://libs.websoft9.com/Websoft9/DocsPicture/en/wampserver/wampserver-clicks-websoft9.png)
+
 ## Log in Database
 
 WampServer includes MySQL and Web-GUI tool `phpMyAdmin`, [Log in MySQL](/zh/admin-mysql.md) to manage your database now

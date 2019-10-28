@@ -4,8 +4,8 @@ module.exports = [
        collapsable: false,
        children: [
       '/',
-      ['https://support.websoft9.com/docs/lamp/stack-components.html','PHP runtime Parameters'],
-      ['https://support.websoft9.com/docs/lamp/stack-accounts.html','Username and Password'],
+      ['https://support.websoft9.com/docs/wampserver/stack-components.html','PHP runtime Parameters'],
+      ['https://support.websoft9.com/docs/wampserver/stack-accounts.html','Username and Password'],
       ['https://support.websoft9.com/docs/faq/tech-instance.html','Cloud Server'],
       ]
       },
@@ -14,8 +14,6 @@ module.exports = [
         title: 'DevOps Apps',
         collapsable: false,
         children: [
-          '/laravel',
-          '/mantisbt',
         ]
       },
 
@@ -23,11 +21,6 @@ module.exports = [
         title: 'Business Apps',
         collapsable: false,
         children: [
-          '/dolibarr',
-          '/espocrm',
-          '/suitecrm',
-          '/vtiger',
-          '/zdoo',
         ]
       },
     
@@ -35,11 +28,6 @@ module.exports = [
         title: 'CMS Apps',
         collapsable: false,
         children: [
-          '/concrete5',
-          '/drupal',
-          '/joomla',
-          '/processwire',
-          '/typo3',
         ]
       },
       

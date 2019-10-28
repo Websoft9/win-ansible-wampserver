@@ -9,7 +9,7 @@ EmpireCMS（帝国）（phome.net）是国内著名的开源建站软件（内�
 在开始 EmpireCMS 的安装部署之前，建议完成如下事情：
 
 * 浏览器访问：*http://公网ip/9panel* ，快速了解镜像的使用
-* 查看镜像环境参数，包括：**目录路径、版本、数据库、虚拟主机配置文件等** （[马上查看](https://support.websoft9.com/docs/lamp/zh/stack-components.html)）
+* 查看镜像环境参数，包括：**目录路径、版本、数据库、虚拟主机配置文件等** （[马上查看](https://support.websoft9.com/docs/wampserver/zh/stack-components.html)）
 
 ## EmpireCMS 安装到服务器
 
@@ -18,9 +18,9 @@ EmpireCMS（帝国）（phome.net）是国内著名的开源建站软件（内�
 如果你使用的是 WampServer 镜像，请先将 EmpireCMS 安装到服务器，操作步骤如下：
 
 1. 通过域名控制台完成解析域名（增加一个A记录指向服务器IP），并测试是否成功
-2. 通过 [phpMyAdmin 登录 MySQL](https://support.websoft9.com/docs/lamp/zh/admin-mysql.html)，为 EmpireCMS 系统增加一个数据库，假如名称为：`empirecms`
+2. 通过 [phpMyAdmin 登录 MySQL](https://support.websoft9.com/docs/wampserver/zh/admin-mysql.html)，为 EmpireCMS 系统增加一个数据库，假如名称为：`empirecms`
 3. 到 EmpireCMS 官方[下载源码](http://www.phome.net/download/)
-4. 参考[《如何在 WampServer 上增加网站》](https://support.websoft9.com/docs/lamp/zh/solution-deployment.html#安装第二个网站) ，将 EmpireCMS 安装到服务器的 [WampServer](https://support.websoft9.com/docs/lamp/zh/) 环境中
+4. 参考[《如何在 WampServer 上增加网站》](https://support.websoft9.com/docs/wampserver/zh/solution-deployment.html#安装第二个网站) ，将 EmpireCMS 安装到服务器的 [WampServer](https://support.websoft9.com/docs/wampserver/zh/) 环境中
 
 ---
 
@@ -31,7 +31,7 @@ EmpireCMS（帝国）（phome.net）是国内著名的开源建站软件（内�
    ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/empirecms/empirecms-install002-websoft9.png)
 3. 进入目录权限检测，检测通过后方可进入后续步骤 
    ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/empirecms/empirecms-install003-websoft9.png)
-4. 填写您的数据库参数（[查看数据库账号密码](https://support.websoft9.com/docs/lamp/zh/stack-accounts.html)），点击 “下一步”; 
+4. 填写您的数据库参数（[查看数据库账号密码](https://support.websoft9.com/docs/wampserver/zh/stack-accounts.html)），点击 “下一步”; 
    ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/empirecms/empirecms-install004-websoft9.png)
 5. 设置您的管理员账号，点击 “下一步”; 
    ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/empirecms/empirecms-install005-websoft9.png)

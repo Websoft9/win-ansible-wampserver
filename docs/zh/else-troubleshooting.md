@@ -1,16 +1,32 @@
 # 故障处理
 
-故障处理主要通过日志文件进行分析，从某种程度上，处理故障就是解读日志文件。
+此处收集使用 WampServer 过程中最常见的故障，供您参考
 
-我们收集使用 WampServer 过程中最常见的故障，供您参考：
+> 大部分故障与云平台密切相关，如果你可以确认故障的原因是云平台造成的，请参考[云平台文档](https://support.websoft9.com/docs/faq/zh/tech-instance.html)
 
-## 网站类
+#### 网站重定向错误？
 
-#### 网站显示重定向错误？
+多语言下，重定向错误比较常见。例如：打开您的Nextcloud商店中文版会出现重定向
 
-检查网站根目录下的 *.htaccess* 文件，分析其中的重定向规则，找到其中的死循环。
+处理办法：
+1. 分析网站根目录下的 `.htaccess` 文件，看看有没有死循环规则
+2. 进入后台先删除中文，然后再重新导入中文。重新导入的时候，Nextcloud会自动生成伪静态规则，覆盖您网站根目录的 `.htaccess` 文件
 
-## 数据库类
+#### 新增站点报错：You don't have permission to access/on this server
+
+解决办法：
+
+1.  检查网站目录的权限
+2.  配置虚拟主机配置文件是否有 "AllowOverride All   Require all granted" 相关内容
+
+#### 如何解决 http-proxy 漏洞？
+升级 PHP 的小版本即可解决 ttp-proxy 漏洞
+
+#### 修改了数据库密码 Nextcloud 不能访问？
+
+#### Apache httpd 服务无法启动？
+
+请通过分析日志文件定位原因
 
 #### 数据库服务无法启动
 
@@ -37,27 +53,22 @@ binlog主要用于出现没有备份的情况下，恢复数据库。但binlog�
   ~~~
   #log-bin=mysql-bin  
   ~~~
-2. 重启mysql
-  ~~~
-  systemctl restart mysqld
-  ~~~
+2. 重启 MySQL 服务
 
-## Apache类
+#### 如何根据 Windows 系统日志查看故障原因？
 
-#### 重启 Apache 服务显示 *No spaces...*
+按照下列图中所示，进入到 Windows 系统的**事件查看器**，选择 Windows 日志下的应用程序，然后在右侧的事件列表查看出现错误的应用程序，单击即可在下方弹出详细的错误信息，最后就可以根据错误原因来纠正错误。
 
-出现此信息的时候，重启服务是成功的。
+![event](http://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-eventerror-websoft9-1.png)
+![event](http://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-eventerror-websoft9-2.png)
 
-解决方案:
+#### 如何解决端口冲突？
 
-```
-echo "fs.inotify.max_user_watches=262144" >> /etc/sysctl.conf 
+默认下，Apache默认端口为80，MySQL默认端口为3306；可以通过cmd控制台输入指令：netstat -ano，查看服务器端口的使用情况。  
 
-sysctl -p
-```
+如果发送端口冲突故障，具体解决方法如下：
 
-## 服务器类
-
-服务器相关故障的诊断和解决，与云平台密切相关，请参考[云平台文档](https://support.websoft9.com/docs/faq/zh/tech-instance.html)
-
-## 网络类
+1. 找到 Apache 的配置文件（包括 httpd.conf 和站点配置文件），将端口 80 改为其他端口，如：81，然后重启 Apache。
+**注意：更改端口后，需要将安全组的对应端口开放出来，否则服务正常启动，但外网依然无法访问网站。**
+2. 找到 MySQL 的配置文件 my.ini ，将其中的 port = 3306 改为其他端口，然后重启MySQL服务。
+3. 通过 netstat -ano 命令查看是哪个程序或服务占用了 80 或 3306 端口，可根据 PID 到任务管理器或服务列表将其关闭，再重新启动 Apache 和 MySQL。

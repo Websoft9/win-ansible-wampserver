@@ -22,7 +22,7 @@ module.exports = [
       '/zh/solution-https',
       '/zh/solution-backup',
       '/zh/solution-upgrade',
-      ['https://support.websoft9.com/docs/lamp/installation/zh','开源应用安装示例（集）'],
+      ['https://support.websoft9.com/docs/wampserver/installation/zh','开源应用安装示例（集）'],
       '/zh/solution-more',
     ]
   },
@@ -33,9 +33,9 @@ module.exports = [
     children: [
       '/zh/admin-services',
       '/zh/admin-mysql',
-      ['https://support.websoft9.com/docs/linux/zh/lang-php.html','PHP'],
-      ['https://support.websoft9.com/docs/linux/zh/webs-apache.html','Apache'],
-      ['https://support.websoft9.com/docs/linux/zh/admin-practices.html','Linux'],
+      ['https://support.websoft9.com/docs/windows/zh/lang-php.html','PHP'],
+      ['https://support.websoft9.com/docs/windows/zh/webs-apache.html','Apache'],
+      ['https://support.websoft9.com/docs/windows/zh/admin-practices.html','Windows'],
     ]
   },
   
