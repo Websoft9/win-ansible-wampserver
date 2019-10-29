@@ -85,14 +85,14 @@ memory_limit – Minimum: 256M
 2. 修改所需的参数，保存并重启 [Apache 服务](/zh/admin-services.md)
 
 除了直接编辑 php.ini 文件之外，你也可以通过 WampServer 的图形化界面修改 PHP 配置文件
-![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-phpini-websoft9.png)
+![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-phpini-websoft9.png)
 
 
 ## PHP版本切换
 
 WampServer 支持 PHP 版本在线切换
 
-![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-changephpversion-websoft9.png)
+![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-changephpversion-websoft9.png)
 
 ## PHP 扩展
 
@@ -103,7 +103,7 @@ WampServer 支持 PHP 版本在线切换
 2. 开启或关闭扩展
 
    - 通过 WampServer 可视化工具设置
-     ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-setphpexts-websoft9.png)
+     ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-setphpexts-websoft9.png)
    
    - 通过修改 PHP 配置文件设置
      ```

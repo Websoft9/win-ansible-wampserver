@@ -12,9 +12,9 @@ WampServer预装包，已安装Web服务器 Win64OpenSSL 模块，并完成预�
 
 1. 将申请的证书、秘钥文件上传到 *C:\websoft9\wampserverpps\cert* 目录
 2. 确保 WampServer的 Apache 的 Open-SSL 模块已被启用 
-   ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-sslenable-websoft9.png)
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-sslenable-websoft9.png)
 3. 打开 httpd-vhosts.conf（虚拟主机配置配置文件） 
-   ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-vhost-websoft9.png)
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-vhost-websoft9.png)
 6. 将下面的 HTTPS 配置文件模板（<VirtualHost *:443>...</VirtualHost>），增加到 httpd-vhosts.conf 文件中(不能删除原有内容)
 
     ```
@@ -36,7 +36,7 @@ WampServer预装包，已安装Web服务器 Win64OpenSSL 模块，并完成预�
 7. 修改其中的 ServerName, DocumentRoot, ErrorLog, CusomLog, Directory等项的值（[修改参考](/zh/solution-deployment.html#virtualhost)），修改完成后保存
 
 8. 重启所有服务 
-   ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-clicks-websoft9.png)
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-clicks-websoft9.png)
 
 ## 更多指南
 

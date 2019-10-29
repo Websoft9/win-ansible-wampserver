@@ -19,7 +19,7 @@
 
 远程桌面登录到 Windows 服务器，查看 WampServer 是否正常运行（图标为绿色），点击【重新启动所有服务】测试可用性。如果桌面右下角没有 WampServer 图标，请重启服务器后再查看。
 
-![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-clicks-websoft9.png)
+![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-clicks-websoft9.png)
 
 ## 登录数据库
 

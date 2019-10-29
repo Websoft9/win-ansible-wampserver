@@ -6,11 +6,9 @@
 
 #### 网站重定向错误？
 
-多语言下，重定向错误比较常见。例如：打开您的Nextcloud商店中文版会出现重定向
+网站重定向错误比较常见。  
 
-处理办法：
-1. 分析网站根目录下的 `.htaccess` 文件，看看有没有死循环规则
-2. 进入后台先删除中文，然后再重新导入中文。重新导入的时候，Nextcloud会自动生成伪静态规则，覆盖您网站根目录的 `.htaccess` 文件
+处理办法：分析网站根目录下的 `.htaccess` 文件，看看有没有死循环规则
 
 #### 新增站点报错：You don't have permission to access/on this server
 
@@ -21,8 +19,6 @@
 
 #### 如何解决 http-proxy 漏洞？
 升级 PHP 的小版本即可解决 ttp-proxy 漏洞
-
-#### 修改了数据库密码 Nextcloud 不能访问？
 
 #### Apache httpd 服务无法启动？
 
@@ -59,8 +55,8 @@ binlog主要用于出现没有备份的情况下，恢复数据库。但binlog�
 
 按照下列图中所示，进入到 Windows 系统的**事件查看器**，选择 Windows 日志下的应用程序，然后在右侧的事件列表查看出现错误的应用程序，单击即可在下方弹出详细的错误信息，最后就可以根据错误原因来纠正错误。
 
-![event](http://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-eventerror-websoft9-1.png)
-![event](http://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-eventerror-websoft9-2.png)
+![event](https://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-eventerror-websoft9-1.png)
+![event](https://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-eventerror-websoft9-2.png)
 
 #### 如何解决端口冲突？
 

@@ -8,40 +8,53 @@ You should know the differences between the terms **Update** and **Upgrade**([Ex
 
 For WampServer maintenance, focus on the following two Update & Upgrade jobs
 
-- Sytem update(Operating System and Running Environment) 
-- PHP Version Upgrade
-- Application Upgrade
+- Windows Sytem update
+- PHP, Apache, MySQL Version Upgrade
 
-## System Update
+## Windows System Update
 
-Run an update command to complete the system update:
+The update of the Windows server is similar to that of the local computer. Manually find the update management program and set the automatic download automatic update.
 
-``` shell
-#For Ubuntu
-apt update && apt upgrade -y
+## PHP Update
 
-#For Centos&Redhat
-yum update -y
-```
-> This deployment package is preconfigured with a scheduled task for automatic updates. If you want to remove the automatic update, please delete the corresponding Cron
+For example, upgrading from PHP7.0.29 to PHP7.0.31:
 
-## PHP Version Upgrade
+1. Left click on the WampServer icon in the lower right corner of the taskbar to stop all services
 
-Refert to the docs *[PHP version upgrade](https://support.websoft9.com/docs/linux/zh/lang-php.html#verion-upgrade)*
+2. Visit [php.net](https://windows.php.net/download/) to download the latest PHP 
+   > Note: The downloaded file is a zip file and you must select the **Thread Safe** version.
+   	![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/wamp/wampserver-phpupdate-1-websoft9.png)
 
-## Application Upgrade
+3. Backup the folder *C:\websoft9\wampserver\bin\php\php7.0.29* and delete it, then uzip the the package you have download and rename the folder to *php7.0.31*
 
-Different application have different upgrade solution, not discussed here
+4. Raname the *php.ini-production* to *php.ini*
+
+5. Edit the Apache main configuration file *C:\websoft9\wampserver\bin\apache\apache2.4.33\conf\httpd.conf* 
+   ```
+   LoadModule php7_module "C:/websoft9/wampserver/bin/php/php7.0.29/php7apache2_4.dll
+
+   modify to
+
+   LoadModule php7_module "C:/websoft9/wampserver/bin/php/php7.0.31/php7apache2_4.dll
+   ```
+
+6. [Restart all service](/admin-services.md)
+
+## Apache Update
+Coming soon...
+
+## MySQL Update
+Coming soon...
 
 ## Q&A
 
 #### Is this Image support MySQL5.6 upgrade to MySQL5.7?
-No,you can upgrade the same version, E.g 5.6.x to 5.6.y   or  5.7.x to 5.7.y
+No,you can upgrade the same version, E.g 5.6.x to 5.6.y or  5.7.x to 5.7.y
 
-#### Is this Image support PHP7.0 upgrade to PHP7.2?
-Yes
+#### Is support PHP7.0 upgrade to PHP7.2?
+The official website of WampServer have no solution for this
 
-#### Is this Image support PHP7.2 downgrade PHP7.0?
+#### Is support PHP7.2 downgrade PHP7.0?
 No
 
 #### What should I do before upgrade?

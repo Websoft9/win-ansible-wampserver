@@ -2,42 +2,17 @@
 
 These commands you must know when you using the WampServer of Websoft9
 
-### Apache
+## By WampServer
 
-```shell
-#For Centos&Redhat
-sudo systemctl start httpd
-sudo systemctl stop httpd
-sudo systemctl restart httpd
-sudo systemctl status httpd
+Connect to Server, open the WAMPServer and click【Restart all services】, you restart Apache, MySQL & MariaDB one time.
 
-#For Ubuntu&Debian
-sudo systemctl start apache2
-sudo systemctl stop apache2
-sudo systemctl restart apache2
-sudo systemctl status apache2
-```
+![](https://libs.websoft9.com/Websoft9/DocsPicture/en/wampserver/wampserver-clicks-websoft9.png)
 
-### PHP-FPM
-```shell
-systemctl start php-fpm
-systemctl stop php-fpm
-systemctl restart php-fpm
-systemctl status php-fpm
+## By Windows's system service
 
-### MySQL
+Connect to Server, open the Windows service tool:【Start Menu】>【administrator tools】>【Services】
+![](https://libs.websoft9.com/Websoft9/DocsPicture/en/wampserver/wampserver-ss-websoft9.png)
 
-```shell
-sudo systemctl start mysql
-sudo systemctl stop mysql
-sudo systemctl restart mysql
-sudo systemctl status mysql
-```
-
-### Redis
-```shell
-systemctl start redis
-systemctl stop redis
-systemctl restart redis
-systemctl status redis
-```
+- wampapache64 represents the Apache service
+- wampMysql represents the MySQL service
+- wampMariadb represents the MariaDB service

@@ -19,7 +19,7 @@ If you have completed the WampServer deployment on Cloud Platform, the following
 
 Connect Windows server on the remote desktop, check if WampServer is running normally (the icon is green), and click 【Restart all services】 to test the availability. If there is no WampServer icon in the lower right corner of the desktop, please restart the server before viewing.
 
-![](http://libs.websoft9.com/Websoft9/DocsPicture/en/wampserver/wampserver-clicks-websoft9.png)
+![](https://libs.websoft9.com/Websoft9/DocsPicture/en/wampserver/wampserver-clicks-websoft9.png)
 
 ## Log in Database
 

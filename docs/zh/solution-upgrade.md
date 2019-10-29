@@ -20,7 +20,7 @@ Windows服务器的更新与本地电脑类似，手动找到更新管理程序�
 
 2. 到 [PHP 官网](https://windows.php.net/download/)下载最新版本的 PHP 
    > 注意：下载的文件为压缩包文件，且必须选择 **Thread Safe** 版本。
-   	![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/wamp/wampserver-phpupdate-1-websoft9.png)
+   	![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/wamp/wampserver-phpupdate-1-websoft9.png)
 
 3. 备份原来的 C:\websoft9\wampserver\bin\php\php7.0.29 文件夹，再将该文件夹下所有文件删除，将新版 PHP 文件解压到这个文件夹里，文件夹重命名为 php7.0.31
 

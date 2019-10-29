@@ -28,18 +28,18 @@ Drupal（drupal.org）是全球三大开源内容管理系统之一，约3%的�
 
 1. 本地浏览器访问：*http://域名* 或 *http://公网IP* 进入安装向导（首选域名访问方式）
 2.  选择一门语言，进入下一步
-    ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/dp01.png)
+    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/dp01.png)
 3.  选择一种安装方式，进入下一步
-    ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/dp02.png)
-4.  填写您的数据库参数（[查看数据库账号密码](https://support.websoft9.com/docs/lamp/zh/stack-accounts.html)），保存并继续;
-    ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/dp03.png)
+    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/dp02.png)
+4.  填写您的数据库参数（[查看数据库账号密码](https://support.websoft9.com/docs/wampserver/zh/stack-accounts.html)），保存并继续;
+    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/dp03.png)
 5.  分别完成网站安装和翻译安装
 6.  设置网站信息。站点维护账号及后台账号，请务必设置好并牢记之。进入下一步
-    ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/dp06.png)
+    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/dp06.png)
 7.  系统完成最后一步安装
-    ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/dp08.png)
+    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/dp08.png)
 8.  进入Drupal后台，体验完整功能
-    ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/dp09.png)
+    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/dp09.png)
 
 ## 常见问题
 
@@ -50,16 +50,16 @@ settings.php 中的 trusted_host_patterns 设置未配置。这可能导致安�
 #### 如何设置SMTP发邮件？
 
 1. Drupal安装完成后首先确认是否已经安装SMTP模块，如下图所示，
-  ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-smtp-1-websoft9.png)
+  ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-smtp-1-websoft9.png)
 
 2. 若没有该模块可在[立即下载](http://drupal.org/project/smtp)。
-  ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-smtp-2-websoft9.png)
+  ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-smtp-2-websoft9.png)
 
 3. 按图中所示上传smtp模块，安装完成后还需在**扩展**选项里勾选安装**SMTP Authentication Support**(有已有则忽略这一步)。
-  ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-smtp-3-websoft9.png)
+  ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-smtp-3-websoft9.png)
 
 4. 接下来即可在**配置**--**SMTP Authentication Support**选项中开始配置smtp服务，按如图填写保存配置。
-  ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-smtp-4-websoft9.png)
-  ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-smtp-5-websoft9.png)
+  ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-smtp-4-websoft9.png)
+  ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-smtp-5-websoft9.png)
   
 5. 至此，drupal的smtp模块配置完成，您现在可以使用drupal的smtp模块收发功能了。

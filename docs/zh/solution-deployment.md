@@ -43,7 +43,9 @@
 
 1. 使用 远程桌面 连接服务器，在 C:\websoft9\wampserver\www 下新建一个网站目录，假设命令为“mysite2”
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-addmysite2-websoft9.png)
+
 2. 将本地网站源文件上传到：*C:\websoft9\wampserver\www\mysite2* 
+
 3. 编辑 httpd-vhosts.conf 文件
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-addmorevhostconfig-websoft9.png)
 
@@ -75,10 +77,10 @@
       ```
       Alias /sitename C:\websoft9\wampserver\www\mysite2
       <Directory "C:\websoft9\wampserver\www\mysite2">
-	  Options Indexes FollowSymlinks
-	  AllowOverride All
-	  Require all granted
-	  </Directory>
+	     Options Indexes FollowSymlinks
+	     AllowOverride All
+	     Require all granted
+	    </Directory>
       ```
 4. 保存 httpd-vhosts.conf，然后 [重启所有服务](/zh/admin-services.md)
 5. 根据有无域名，本地浏览器访问：*http://域名* 或 *http://服务器公网IP/sitename*  访问你的网站。
@@ -111,7 +113,7 @@ VirtualHost 改动务必准确无误，任何错误的修改都会导致服务�
 
 ## 常见问题
 
-##### 找不到示例网站？
+#### 找不到示例网站？
 
 历史版本中历史网站路径与文档中描述有差异  
 历史版本的示例网站路径为：C:\websoft9\wampstack\www

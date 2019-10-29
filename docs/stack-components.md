@@ -14,60 +14,59 @@ Example application directory: *C:\websoft9\wampserver\www\www.example.com*
 ### Apache
 
 **Apache vhost configuration file**: *C:\websoft9\wampserver\bin\apache\apache2.4.x\conf\extra\httpd-vhosts.conf*    
-![](http://libs.websoft9.com/Websoft9/DocsPicture/en/wampserver/wampserver-vhost-websoft9.png)
+![](https://libs.websoft9.com/Websoft9/DocsPicture/en/wampserver/wampserver-vhost-websoft9.png)
 
-Apache main configuration file: * C:\websoft9\wampserver\bin\apache\apache2.4.x\conf\httpd.conf*   
+Apache main configuration file: *C:\websoft9\wampserver\bin\apache\apache2.4.x\conf\httpd.conf*   
 Apache logs file: *C:\websoft9\wampserver\logs*  
 Apache module directory: *C:\websoft9\wampserver\bin\apache\apache2.4.x\modules*    
 
-**vhost.conf** includes one [VirtualHost](https://support.websoft9.com/docs/linux/webs-apache.html#vhost) configuration items whitch matched the **Example application**
+**httpd-vhosts.conf** includes one [VirtualHost](https://support.websoft9.com/docs/linux/webs-apache.html#vhost) configuration items whitch matched the **Example application**
 ```
 <VirtualHost *:80>
 ServerName www.mydomain.com
-ServerAlias other.mydomain.com
-DocumentRoot "/data/wwwroot/www.example.com"
-ErrorLog "/var/log/httpd/www.mydomain.com_error_apache.log"
-CustomLog "/var/log/httpd/www.mydomain.com_apache.log" common
-<Directory "/data/wwwroot/www.example.com">
-Options Indexes FollowSymlinks
-AllowOverride All
-Require all granted
+#ServerAlias other.mydomain.com
+DocumentRoot "C:\websoft9\wampserver\www\www.example.com"
+ErrorLog "logs\www.mydomain.com_error_apache.log"
+CustomLog "logs\www.mydomain.com_apache.log" common
+<Directory "C:\websoft9\wampserver\www\www.example.com">
+   Options Indexes FollowSymlinks
+   AllowOverride All
+   Require all granted
 </Directory>
 </VirtualHost>
 ```
 
-> How many websites you need, you should add the same number of VirtualHost to **vhost.conf**
+> How many websites you need, you should add the same number of VirtualHost to **httpd-vhosts.conf**
 
 ### PHP
 
-PHP configuration file: */etc/php.ini*  
-PHP Modules configurations directory: */etc/php.d*
-```
-# Installed PHP Modules
-Core  date  libxml  openssl  pcre  zlib  filter  hash  Reflection  SPL  session  standard  apache2handler  
-bcmath  bz2  calendar  ctype  curl  dom  mbstring  fileinfo  ftp  gd  gettext  gmp  iconv  
-imap  intl  json  ldap  exif  mcrypt  mysqlnd  odbc  PDO  Phar  posix  recode  shmop  
-SimpleXML  snmp  soap  sockets  sqlite3  sysvmsg  sysvsem  sysvshm  tokenizer  xml  xmlwriter  xsl  mysqli  
-pdo_dblib  pdo_mysql  PDO_ODBC  pdo_sqlite  wddx  xmlreader  xmlrpc  igbinary  imagick  zip  redis  Zend OPcache  
-```
+The WampServer environment supports multiple PHP versions, each with a corresponding PHP configuration file.
 
-### MYSQL
+PHP configuration file: *C:\websoft9\wampserver\bin\php\php7.x.x\php.ini*   
+PHP extension directory: *C:\websoft9\wampserver\bin\php\php7.x.x\ext*  
+PHP extension configuration file: *C:\websoft9\wampserver\bin\php\php7.x.x\ext\phpForApache.ini*  
 
-MySQL installation directory: */usr/local/mysql*  
-MySQL data directory: */data/mysql*  
-MySQL configuration file: */etc/my.cnf*    
+PHP extensions are enabled or disabled by modifying the PHP configuration file
+
+### MySQL
+
+MySQL installation directory: *C:\websoft9\wampserver\bin\mysql*  
+MySQL data directory: *C:\websoft9\wampserver\bin\mysql\mysql5.x.x\data*  
+MySQL configuration file: *C:\websoft9\wampserver\bin\mysql\mysql5.x.x\my.ini*    
 MySQL Web Management URL: *http://Internet IP/9panel*, get credential from [Username and Password](/stack-accounts.md)
+
+### MariaDB
+
+MariaDB installation directory: *C:\websoft9\wampserver\bin\mariadb*  
+MariaDB data directory: *C:\websoft9\wampserver\bin\mariadb\mariad10.x.x\data*  
+MariaDB configuration file: *C:\websoft9\wampserver\bin\mariadb\mariad10.x.x\my.ini*    
+MariaDB Web Management URL: *http://Internet IP/9panel*, get credential from [Username and Password](/stack-accounts.md)
 
 ### phpMyAdmin
 
-phpMyAdmin configuration file: */etc/httpd/conf.d/phpmyAdmin.conf*
-
-### Redis
-
-Redis configuration file: */etc/redis.conf*  
-Redis data directory: */var/lib/redis*  
-Redis logs file: */var/log/redis/redis.log*
-
+phpMyAdmin installation directory: *C:\websoft9\wampserver\apps\phpmyadmin4.x.x*  
+phpMyAdmin configuration file: *C:\websoft9\wampserver\apps\phpmyadmin4.x.x\config.inc.php*  
+phpMyAdmin vhost configuration file: *C:\websoft9\wampserver\alias\phpmyadmin.conf*  
 
 ## Ports
 
@@ -77,36 +76,14 @@ These ports should be opened for this application:
 
 | Name | Number | Use |  Necessity |
 | --- | --- | --- | --- |
-| MySQL | 3306 | Remote connect MySQL | Optional |
 | HTTP | 80 | HTTP requests for WampServer | Required |
 | HTTPS | 443 | HTTPS requests WampServer | Optional |
+| MySQL | 3306 | Remote connect MySQL | Optional |
+| MariaDB | 3307 | Remote connect MariaDB | Optional |
 
 ## Version
 
-You can see the version from product page of Marketplace. However, after being deployed to your server, the components will be automatically updated, resulting in a certain change in the version number. Therefore, the exact version number should be viewed by running the command on the server:
+You can see the version from product page of Marketplace, for a more accurate version number, please obtain the following method:
 
-```shell
-# Linux Version
-lsb_release -a
-
-# PHP Version
-php -v
-
-# List Installed PHP Modules
-php -m
-
-# Apache version on Centos
-httpd -v
-
-# Apache version on Ubuntu
-apache2 -v
-
-# List Installed Apache Modules
-apachectl -M
-
-# MySQL version
-mysql -V
-
-# Redis version
-redis-server -v
-```
+- Go to the directory *C:\websoft9\wampserver* on your Server, the folder name includes version number  
+- Visit URL: *http://Internet IP/9panel/tz.php*  to view the components version number

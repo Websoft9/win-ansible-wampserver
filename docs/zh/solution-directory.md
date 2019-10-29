@@ -29,7 +29,7 @@
 
 1. 停止MySQL服务
 2. 将 C:\websoft9\wampserver\bin\mysql\data 下所有文件拷贝到新目录，例如：D:\data
-3. 修改 [数据库配置文件](/zh/stack-components.html#mysql) 文件中数据存放的路径，范例参考：
+3. 修改 [数据库配置文件](/zh/stack-components.md#mysql) 文件中数据存放的路径，范例参考：
 	~~~
     datadir="C:\websoft9\wampserver\bin\mysql\data"
     log-error="C:\websoft9\wampserver\bin\mysql\data\mysqld.log"
@@ -37,7 +37,7 @@
     修改为：
     
     datadir="D:\data"
-    log-error="D:\data/mysqld.log"
+    log-error="D:\data\mysqld.log"
     ~~~
  4. 重启MySQL服务
 

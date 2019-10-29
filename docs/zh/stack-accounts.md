@@ -4,9 +4,10 @@
 
 ## MySQL
 
+  **管理员用户名**：*root*   
   **密码存储路径**：*C:/credentials/password.txt*     
   **获取方式**： 远程桌面到服务器，打开此文件即可   
-   ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-crepw-websoft9.png)
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/wampserver/wampserver-crepw-websoft9.png)
 
   **注意**：若服务器上不存在 password.txt 文件，那么数据库密码是 `123456`。此时务必修改为强密码，类似于：f@N7eUUm25xAjP!$ ，这样有助于提高数据库的安全性，减少数据库密码被破解的风险。
 
@@ -21,4 +22,4 @@
    |  云平台   |  管理员账号   |
    | --- | --- |
    |  Azure   |  创建服务器的时候自行设置   |
-   |  azure，阿里云，华为云，腾讯云   |  administrator   |
+   |  AWS，阿里云，华为云，腾讯云   |  administrator   |

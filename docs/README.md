@@ -8,7 +8,7 @@ This documentation is provided by [Websoft9](https://www.websoft9.com/), it can 
 
 The WampServer (Windows-Apache-MySQL-PHP) is a Windows web development environment. It allows you to create web applications with Apache, PHP and a MySQL database. Alongside, phpMyAdmin allows you to manage easily your databases.
 
-![](http://libs.websoft9.com/Websoft9/DocsPicture/en/wampserver/wampserver-phpini-websoft9.png)
+![](https://libs.websoft9.com/Websoft9/DocsPicture/en/wampserver/wampserver-phpini-websoft9.png)
 
 ---
 
