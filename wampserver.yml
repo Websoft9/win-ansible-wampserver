@@ -6,7 +6,7 @@
   become_method: runas
 
   vars:
-    ansible_become_password: Qwerty123456
+    ansible_become_password: vc~?HBEA7t8`5q
 
   roles:
     - { role: common, tags: "common" }
