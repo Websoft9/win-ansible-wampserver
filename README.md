@@ -1,6 +1,6 @@
 # ansible 操作 Windows 的前置工作：
 ## 受控端设置
-1. Windows2008 以下的操作系统需要先升级 Powershell;
+1. 升级 Powershell（Windows2008 以及以下的操作系统需要）
    远程连接到 Windows 服务器，以管理员权限运行 Powershell，执行以下命令：
    ~~~
     $url = "https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1"
@@ -13,9 +13,8 @@
 
     # Version can be 3.0, 4.0 or 5.1
     &$file -Version 5.1 -Username $username -Password $password -Verbose
-    ~~~
-2. 完成升级后，还需要删除自动登录并将执行策略设置回默认值 Restricted：
-    ~~~
+    
+    ##完成升级后，还需要删除自动登录并将执行策略设置回默认值 Restricted：
     # This isn't needed but is a good security practice to complete
     Set-ExecutionPolicy -ExecutionPolicy Restricted -Force
 
@@ -24,20 +23,18 @@
     Remove-ItemProperty -Path $reg_winlogon_path -Name DefaultUserName -ErrorAction SilentlyContinue
     Remove-ItemProperty -Path $reg_winlogon_path -Name DefaultPassword -ErrorAction SilentlyContinue
     ~~~
-3. WinRM 设置
+2. 设置 WinRM（所有 Windows 版本必须设置）
    ~~~
     $url = "https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1"
     $file = "$env:temp\ConfigureRemotingForAnsible.ps1"
-
     (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
-
     powershell.exe -ExecutionPolicy ByPass -File $file
+    
+    winrm set winrm/config/service '@{AllowUnencrypted="true"}'
+    winrm set winrm/config/service/auth '@{Basic="true"}
    ~~~
-   然后再执行：
-   ```winrm set winrm/config/service '@{AllowUnencrypted="true"}'``` 
-   ```winrm set winrm/config/service/auth '@{Basic="true"}'```
 
-4. 在防火墙开放5985端口重新连接。
+3. 临时关闭 Windows 的防火墙（需要用到 5985 端口）
 
 ## 主控端设置
 在 ansible 已安装的前提下，还需要安装 winrm 模块：
