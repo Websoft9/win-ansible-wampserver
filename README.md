@@ -37,11 +37,17 @@
 3. 临时关闭 Windows 的防火墙（需要用到 5985 端口）
 
 ## 主控端设置
+
 在 ansible 已安装的前提下，还需要安装 winrm 模块：
-```pip install pywinrm```
-```apt-get install libkrb5-dev```
-```pip install kerberos```
-```pip install paramiko PyYAML Jinja2 httplib2 six```
+
+```
+pip install pywinrm
+apt-get install libkrb5-dev
+pip install kerberos
+pip install paramiko PyYAML Jinja2 httplib2 six
+
+```
+Ansible Tower 默认已经安装 winrm，无需再次安装
 
 hosts 文件示例：
 > [windows-server]
