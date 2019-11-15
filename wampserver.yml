@@ -2,11 +2,6 @@
 - name: wampserver
   hosts: all
   become: yes
-  become_user: administrator
-  become_method: runas
-
-  vars:
-    ansible_become_password: Qwerty123456
 
   roles:
     - { role: common, tags: "common" }
