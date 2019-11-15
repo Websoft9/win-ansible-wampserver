@@ -1,6 +1,6 @@
 # ansible 操作 Windows 的前置工作：
 ## 受控端设置
-1. 升级 Powershell（Windows2008 以及以下的操作系统需要）
+1. 升级 Powershell（Windows2008 以及以下的操作系统需要）  
    远程连接到 Windows 服务器，以管理员权限运行 Powershell，执行以下命令：
    ~~~
     $url = "https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1"
